@@ -19,16 +19,30 @@ public class RecursionMethods {
     public static int factorial(int x) {
         if (x == 1) {
             return 1;
-        } else {
-            return (x * factorial(x-1)); 
-        }
+        } 
+        return (x * factorial(x-1)); 
+
     }
-    
+
     public static int arraySum(ArrayList<Integer> x, int y) {
         if (y == x.size()-1) {
             return x.get(y);
-        } else {
-            return (x.get(y) + arraySum(x, ++y));
-        }
+        } 
+        return (x.get(y) + arraySum(x, ++y));
+
+    }
+
+    public static int evenCount(ArrayList<Integer> x, int y) {
+        if (y == x.size()-1) {
+            return x.get(y)%2 == 0 ? 1 : 0;
+        }   
+        return x.get(y)%2 == 0 ? 1+evenCount(x, ++y) : evenCount(x,++y);
+    }
+
+    public static int Euclid(int x, int y) {              
+        if (y == 0) {
+            return x;
+        } 
+        return Euclid(y, x%y);
     }
 }
